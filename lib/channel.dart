@@ -54,6 +54,7 @@ class HeroesChannel extends ApplicationChannel {
        .route("/xxx/")
       .link(()=> XContorller(context));
      // member1 在这里添加了新的路由。 
+    // add by leader.
      router
       .route("/heroes/[:id]")
       .link(() => HeroesController(context));
