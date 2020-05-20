@@ -9,12 +9,17 @@ class HeroesController extends ResourceController {
 
   @Operation.get()
   Future<Response> getAllHeroes() async {
-    final heroQuery = Query<Hero>(context);
-    final heroes = await heroQuery.fetch();
+    // Query<Hero>(context);
+    // final heroes = await heroQuery.fetch();
 
-    return Response.ok(heroes);
+    // return Response.ok(heroes);
+    return Response.ok("[]");
   }
 
+  @Operation.post()
+  Future<Response> createHero() async {
+    
+  }
   @Operation.get('id')
   Future<Response> getHeroByID(@Bind.path('id') int id) async {
     final heroQuery = Query<Hero>(context)..where((h) => h.id).equalTo(id);

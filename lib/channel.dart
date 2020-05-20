@@ -45,8 +45,17 @@ class HeroesChannel extends ApplicationChannel {
       .linkFunction((request) async {
         return Response.ok({"key": "value"});
       });
+      .route("/xxx/")
+      .link(()=> XContorller(context));
+       .route("/xxx/")
+      .link(()=> XContorller(context));
+       .route("/xxx/")
+      .link(()=> XContorller(context));
+       .route("/xxx/")
+      .link(()=> XContorller(context));
+      
      router
-      .route('/heroes')
+      .route("/heroes/[:id]")
       .link(() => HeroesController(context));
     return router;
   }
